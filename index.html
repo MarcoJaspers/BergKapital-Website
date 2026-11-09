@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="de" class="theme-marke">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finanzberater &amp; Versicherungsmakler in Wuppertal | BergKapital – Marco Jaspers</title>
+  <meta name="description" content="BergKapital – Marco Jaspers, Finanzberater &amp; Versicherungsmakler in Wuppertal. Investmentberatung und Versicherungen im Mandanteninteresse: verständlich, persönlich. Erstgespräch direkt online buchen.">
+  <meta name="robots" content="noindex, nofollow"><!-- Designstudie: nicht indexieren. Für Livegang entfernen. -->
+  <meta name="theme-color" content="#2A2E33">
+  <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
+    (function () {
+      var v = new URLSearchParams(location.search).get('v');
+      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
+      if (v !== 'klassisch') v = 'marke';
+      document.documentElement.classList.remove('theme-marke');
+      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
+      document.documentElement.dataset.variant = v;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=20261109g">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "BergKapital – Finanzberatung & Versicherungsmakler",
+    "logo": "/assets/brand/bergkapital-logo.jpg",
+    "description": "Investmentberatung und Versicherungen im Mandanteninteresse.",
+    "founder": { "@type": "Person", "name": "Marco Jaspers", "jobTitle": "Finanzberater & Versicherungsmakler" },
+    "telephone": "+49 160 4921092",
+    "email": "info@bergkapital.de",
+    "url": "https://bergkapital.de",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Wuppertal",
+      "addressCountry": "DE"
+    },
+    "areaServed": { "@type": "City", "name": "Wuppertal" },
+    "openingHours": "Mo-Fr 09:00-19:00",
+    "knowsAbout": ["Investmentberatung", "Vermögensaufbau", "Geldanlage", "Altersvorsorge", "Versicherungsvermittlung", "Versicherungsvergleich"]
+  }
+  </script>
+</head>
+<body class="pb-[68px] md:pb-0">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Zum Inhalt springen</a>
+
+  <!-- 0 · Designstudien-Banner -->
+  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
+    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
+      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
+      <nav class="flex items-center gap-1" aria-label="Variante">
+        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
+        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
+        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
+      </nav>
+    </div>
+    <script>
+      (function () {
+        var cur = document.documentElement.dataset.variant;
+        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
+      })();
+    </script>
+  </div>
+
+  <!-- 1 · Sticky-Navigation -->
+  <header class="site-header sticky top-0 z-50 border-b border-transparent bg-white" data-header>
+    <div class="container-x">
+      <div class="hdr-row flex items-center justify-between gap-6 py-5 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-7">
+        <div class="hidden lg:block">
+          <a href="#termin" class="btn-outline btn-sm">Erstgespräch buchen</a>
+        </div>
+
+        <a href="/" class="block lg:text-center" aria-label="BergKapital – zur Startseite">
+          <span class="wordmark wordmark-main block text-[1.25rem] lg:text-[1.75rem]"><b>Berg</b><span>Kapital</span></span>
+          <span class="wordmark-sub">Finanzberatung&nbsp;&nbsp;|&nbsp;&nbsp;Versicherungsmakler</span>
+        </a>
+
+        <div class="hidden flex-col items-end leading-snug lg:flex">
+
+          <a href="tel:+491604921092" class="text-[13px] text-muted transition-colors hover:text-ink">+49 160 4921092</a>
+
+          <a href="mailto:info@bergkapital.de" class="text-[13px] text-muted transition-colors hover:text-ink">info@bergkapital.de</a>
+        </div>
+
+        <button type="button" class="-mr-2 flex h-11 w-11 items-center justify-center lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen" data-burger>
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" data-burger-open/><path d="M5 5l14 14M19 5L5 19" class="hidden" data-burger-close/></svg>
+        </button>
+      </div>
+
+      <nav class="hidden border-t border-line lg:block" aria-label="Hauptnavigation">
+        <ul class="flex items-center justify-center gap-12 py-4">
+          <li><a class="nav-link" href="#leistungen">Leistungen</a></li>
+          <li><a class="nav-link" href="#arbeitsweise">Arbeitsweise</a></li>
+          <li><a class="nav-link" href="#ueber-mich">Über mich</a></li>
+          <li><a class="nav-link" href="#kontakt">Kontakt</a></li>
+          <li class="h-4 w-px bg-current opacity-20" aria-hidden="true"></li>
+          <li><a class="nav-link inline-flex items-center gap-2" href="/kundenapp.html"><svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M10.5 18.5h3"/></svg> Kundenapp</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobiles Menü -->
+    <nav id="mobile-menu" class="hidden border-t border-line bg-white lg:hidden" aria-label="Mobile Navigation" data-mobile-menu>
+      <ul class="container-x flex flex-col py-4">
+        <li><a class="block border-b border-line py-4 font-serif text-2xl" href="#leistungen">Leistungen</a></li>
+        <li><a class="block border-b border-line py-4 font-serif text-2xl" href="#arbeitsweise">Arbeitsweise</a></li>
+        <li><a class="block border-b border-line py-4 font-serif text-2xl" href="#ueber-mich">Über mich</a></li>
+        <li><a class="block border-b border-line py-4 font-serif text-2xl" href="#kontakt">Kontakt</a></li>
+        <li><a class="flex items-center gap-3 py-4 font-serif text-2xl" href="/kundenapp.html">Kundenapp</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 2 · Hero -->
+    <section class="on-dark relative isolate overflow-hidden bg-deep text-white" aria-labelledby="hero-title">
+      <div class="absolute inset-0 -z-10" data-hero-media>
+        <!-- TODO: echtes Porträt von Marco (Querformat, Person rechts im Bild, z. B. im Büro/Gespräch) als <img loading="eager" …> einsetzen und diesen Platzhalter ersetzen -->
+        <div class="hero-bg absolute inset-0"></div>
+        <p class="absolute bottom-6 right-6 hidden text-[10px] uppercase tracking-[0.25em] text-white/55 md:block">Platzhalter · Porträt Marco Jaspers</p>
+      </div>
+
+      <!-- Großes B-Monogramm (Schwebebahn & Skyline) als Gestaltungselement. "screen" blendet den schwarzen Bildhintergrund aus. -->
+      <div class="pointer-events-none absolute -right-[18%] top-1/2 -z-10 w-[110vw] max-w-[820px] -translate-y-1/2 select-none opacity-[0.22] mix-blend-lighten sm:-right-[8%] sm:w-[70vw] md:right-[2%] md:w-[52vw]" aria-hidden="true" data-monogram>
+        <img src="/assets/brand/bergkapital-monogramm.jpg" alt="" width="400" height="405" class="logo-on-dark block h-auto w-full" fetchpriority="low">
+      </div>
+
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-deep/95 via-deep/60 to-transparent"></div>
+
+      <div class="container-x flex min-h-[78vh] items-center py-24 md:min-h-[86vh] md:py-32">
+        <div class="max-w-[620px]" data-hero-content>
+          <p class="label-light">Finanzberatung &amp; Versicherungsmakler in Wuppertal</p>
+          <span class="accent-rule mt-6" aria-hidden="true"></span>
+          <h1 id="hero-title" class="mt-6 text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem]">Festes Fundament. <em class="font-normal italic text-white/85">Klarer Weg, ruhiger Aufstieg.</em></h1>
+          <p class="mt-7 max-w-[520px] text-[17px] leading-relaxed text-white/80">Investmentberatung und Versicherungen: verständlich, persönlich und immer im Interesse meiner Mandanten.</p>
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <a href="#termin" class="btn-light">Erstgespräch buchen</a>
+            <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch." target="_blank" rel="noopener" class="btn-outline-light">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/></svg>
+              Per WhatsApp schreiben
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Vertrauens-Leiste -->
+    <section class="border-b border-line bg-white" aria-label="Auf einen Blick">
+      <ul class="container-x grid grid-cols-2 lg:grid-cols-4">
+        <li class="flex items-center gap-3 border-b border-r border-line py-6 pr-4 lg:border-b-0 lg:px-6 lg:first:pl-0" data-reveal>
+          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Unabhängiger Versicherungsmakler</span>
+        </li>
+        <li class="flex items-center gap-3 border-b border-line py-6 pl-4 lg:border-b-0 lg:border-r lg:px-6" data-reveal>
+          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 20h18M5 16l4-5 4 3 6-8"/></svg>
+          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Investment&shy;beratung</span>
+        </li>
+        <li class="flex items-center gap-3 border-r border-line py-6 pr-4 lg:px-6" data-reveal>
+          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Persönlich in Wuppertal</span>
+        </li>
+        <li class="flex items-center gap-3 py-6 pl-4 lg:px-6 lg:last:pr-0" data-reveal>
+          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z"/><path d="M12 8v4l2.5 2.5"/></svg>
+          <!-- TODO: kostenlos bestätigen -->
+          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Kostenloses Erstgespräch</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4 · Leistungen -->
+    <section id="leistungen" class="section bg-white" aria-labelledby="leistungen-title">
+      <div class="container-x">
+        <div class="grid gap-8 md:grid-cols-12 md:gap-10">
+          <div class="md:col-span-6" data-reveal>
+            <p class="label">Leistungen</p>
+            <h2 id="leistungen-title" class="h2 mt-5">Zwei Schwerpunkte. <br class="hidden md:block">Ein Maßstab: Ihr Interesse.</h2>
+          </div>
+          <div class="lead space-y-4 md:col-span-5 md:col-start-8 md:self-end" data-reveal>
+            <p class="font-serif text-[1.5rem] leading-snug text-ink">Aufstieg und Sicherung gehören zusammen, am Berg wie bei Ihren Finanzen.</p>
+            <p>Deshalb betrachte ich Vermögensaufbau und Absicherung immer gemeinsam. Wohin die Route führt, bestimmen Ihre Ziele, Ihre Lebenssituation und das, was Ihnen wichtig ist.</p>
+          </div>
+        </div>
+
+        <div class="mt-16 grid gap-16 md:mt-24 md:grid-cols-2 md:gap-14 lg:gap-20">
+          <!-- Investmentberatung -->
+          <article class="service" data-reveal>
+            <span class="font-serif text-xl text-muted">01</span>
+            <h3 class="mt-3 text-[2rem] md:text-[2.375rem]">Investmentberatung</h3>
+            <p class="mt-4 text-muted">Eine Geldanlage, die zu Ihnen passt, nicht zu einer Verkaufsvorgabe. Wir entwickeln gemeinsam eine Strategie, die Sie verstehen und langfristig mittragen können.</p>
+            <ul class="mt-8 border-t border-line">
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20V13M11 20V9M16 20V11M21 20V5"/></svg>
+                <div><p class="font-medium">Vermögensaufbau</p><p class="mt-1 text-[15px] text-muted">Schritt für Schritt, mit einem Plan, der zu Ihrem Einkommen und Ihren Zielen passt.</p></div>
+              </li>
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5V12l6 6"/></svg>
+                <div><p class="font-medium">Geldanlage</p><p class="mt-1 text-[15px] text-muted">Breit gestreut, transparent in den Kosten und nachvollziehbar erklärt.</p></div>
+              </li>
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21V10"/><path d="M12 10c0-3.5 2.5-6 6.5-6 0 3.5-2.5 6-6.5 6zM12 13c0-3-2-5-5.5-5 0 3 2 5 5.5 5z"/><path d="M7 21h10"/></svg>
+                <div><p class="font-medium">Altersvorsorge</p><p class="mt-1 text-[15px] text-muted">Private und betriebliche Vorsorge, abgestimmt auf Ihre Rentenlücke.</p></div>
+              </li>
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+                <div><p class="font-medium">Depot-Check</p><p class="mt-1 text-[15px] text-muted">Ein ehrlicher Blick auf bestehende Anlagen: Struktur, Kosten, Passung.</p></div>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Versicherungen -->
+          <article class="service" data-reveal>
+            <span class="font-serif text-xl text-muted">02</span>
+            <h3 class="mt-3 text-[2rem] md:text-[2.375rem]">Versicherungen im Mandanteninteresse</h3>
+            <p class="mt-4 text-muted">Als Makler arbeite ich in Ihrem Auftrag. Ich prüfe, was Sie wirklich brauchen, vergleiche den Markt und sorge dafür, dass Ihre Verträge zu Ihrem Leben passen.</p>
+            <ul class="mt-8 border-t border-line">
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+                <div><p class="font-medium">Bedarfsanalyse</p><p class="mt-1 text-[15px] text-muted">Welche Risiken sind existenziell und welche Policen brauchen Sie nicht?</p></div>
+              </li>
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 4v16M5 8h14"/><path d="M5 8l-3 6a3 3 0 0 0 6 0zM19 8l-3 6a3 3 0 0 0 6 0z"/><path d="M8 20h8"/></svg>
+                <div><p class="font-medium">Marktvergleich</p><p class="mt-1 text-[15px] text-muted">Leistungen und Bedingungen verschiedener Gesellschaften, sachlich gegenübergestellt.</p></div>
+              </li>
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9.5 14l2 2 4-4"/></svg>
+                <div><p class="font-medium">Vertragscheck</p><p class="mt-1 text-[15px] text-muted">Bestehende Verträge auf Lücken, Doppelungen und veraltete Bedingungen prüfen.</p></div>
+              </li>
+              <li class="service-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+                <div><p class="font-medium">Laufende Betreuung</p><p class="mt-1 text-[15px] text-muted">Ansprechpartner bei Änderungen im Leben und an Ihrer Seite im Schadenfall.</p></div>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="mt-16 md:mt-20" data-reveal>
+          <a href="#termin" class="btn-primary">Erstgespräch buchen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4b · Für wen: privat oder geschäftlich, beide Bereiche gleichwertig gestaltet -->
+    <section id="zielgruppen" class="section bg-white pt-0 md:pt-0" aria-labelledby="zielgruppen-title">
+      <div class="container-x">
+        <div class="max-w-[640px]" data-reveal>
+          <p class="label">Ihr Ausgangspunkt</p>
+          <h2 id="zielgruppen-title" class="h2 mt-5">Privat oder Unternehmen</h2>
+        </div>
+
+        <div class="mt-14 grid gap-6 lg:grid-cols-2">
+          <!-- Privat -->
+          <article class="flex flex-col rounded bg-paper p-8 md:p-12" data-reveal>
+            <p class="text-[11px] font-medium uppercase tracking-wide3 text-blue">Für Sie privat</p>
+            <h3 class="mt-5 text-[2rem] md:text-[2.375rem]">Gut aufgestellt für Ihr Leben.</h3>
+            <p class="mt-4 text-muted">Ob Berufsstart, Familie oder gewachsenes Vermögen: Wir regeln zuerst, was für Sie wichtig ist, verständlich und ohne Fachchinesisch.</p>
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-center gap-3 rounded bg-white px-4 py-3.5"><svg class="h-5 w-5 shrink-0 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/></svg>Die wichtigsten Absicherungen für Sie und die Familie</li>
+              <li class="flex items-center gap-3 rounded bg-white px-4 py-3.5"><svg class="h-5 w-5 shrink-0 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18M6 20V13M11 20V9M16 20V11M21 20V5"/></svg>Vermögen ganzheitlich strukturieren und bewahren</li>
+              <li class="flex items-center gap-3 rounded bg-white px-4 py-3.5"><svg class="h-5 w-5 shrink-0 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Altersvorsorge früh und flexibel</li>
+            </ul>
+            <a href="#termin" class="link-line mt-auto self-start pt-10 text-blue">Erstgespräch buchen</a>
+          </article>
+
+          <!-- Unternehmen -->
+          <article class="flex flex-col rounded bg-paper p-8 md:p-12" data-reveal>
+            <p class="text-[11px] font-medium uppercase tracking-wide3 text-blue">Für Ihr Unternehmen</p>
+            <h3 class="mt-5 text-[2rem] md:text-[2.375rem]">Gut aufgestellt für Ihren Betrieb.</h3>
+            <p class="mt-4 text-muted">Ob Unternehmen oder Selbständigkeit: Wir sichern Ihre Existenz ab. Sie fokussieren sich auf Ihr Business.</p>
+            <!-- TODO: Leistungsumfang für Unternehmen bestätigen (v. a. Absicherung für Inhaber und Selbständige) -->
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-center gap-3 rounded bg-white px-4 py-3.5"><svg class="h-5 w-5 shrink-0 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg>Gewerbeversicherungen im Marktvergleich</li>
+              <li class="flex items-center gap-3 rounded bg-white px-4 py-3.5"><svg class="h-5 w-5 shrink-0 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></svg>Absicherung für Inhaber und Selbständige</li>
+              <li class="flex items-start gap-3 rounded bg-white px-4 py-3.5"><svg class="mt-0.5 h-5 w-5 shrink-0 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 2.800-5.500 6.500-5.500s6.500 2 6.500 5.500"/><path d="M15.500 4.800a3.500 3.500 0 0 1 0 6.400M18 14.800c2.200.700 3.500 2.500 3.500 5.200"/></svg><span>Attraktive Anreize für Ihr Team<span class="mt-0.5 block text-[14px] text-muted">Betriebliche Krankenversicherung, betriebliche Altersvorsorge</span></span></li>
+            </ul>
+            <a href="#termin" class="link-line mt-auto self-start pt-10 text-blue">Erstgespräch für Ihr Unternehmen</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Arbeitsweise -->
+    <section id="arbeitsweise" class="section bg-paper" aria-labelledby="arbeitsweise-title">
+      <div class="container-x">
+        <!-- Zitat-Band -->
+        <figure class="mx-auto max-w-[860px] text-center" data-reveal>
+          <svg class="mx-auto h-8 w-8 text-cta" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M6 24c-2-2-3-4.5-3-7.5C3 11 6.5 7 12 5.5l1 2C9.5 9 8 11.5 8 14h4v10zM20 24c-2-2-3-4.5-3-7.5C17 11 20.5 7 26 5.5l1 2C23.5 9 22 11.5 22 14h4v10z"/></svg>
+          <blockquote class="mt-8 font-serif text-[1.875rem] leading-[1.25] md:text-[2.75rem]">Als Makler stehe ich auf Ihrer Seite, nicht auf der Seite einer Gesellschaft.</blockquote>
+          <figcaption class="label mt-8">Im Mandanteninteresse</figcaption>
+        </figure>
+
+        <div class="mt-20 grid gap-12 border-t border-line pt-16 md:mt-28 md:grid-cols-12 md:pt-20">
+          <div class="md:col-span-4" data-reveal>
+            <p class="label">Arbeitsweise</p>
+            <h2 id="arbeitsweise-title" class="h2 mt-5">Was „im Mandanten&shy;interesse“ konkret heißt</h2>
+          </div>
+          <dl class="grid gap-10 md:col-span-7 md:col-start-6">
+            <div class="grid gap-2 sm:grid-cols-[180px_1fr] sm:gap-8" data-reveal>
+              <dt class="font-serif text-[1.375rem] leading-snug">Ich vertrete Sie</dt>
+              <dd class="text-muted">Ein Versicherungsmakler ist rechtlich dem Mandanten verpflichtet, nicht einer Versicherungsgesellschaft. Ich suche für Sie, nicht für einen Anbieter.</dd>
+            </div>
+            <div class="grid gap-2 sm:grid-cols-[180px_1fr] sm:gap-8" data-reveal>
+              <dt class="font-serif text-[1.375rem] leading-snug">Bedarf vor Produkt</dt>
+              <dd class="text-muted">Am Anfang steht Ihre Situation, nicht ein Tarif. Manchmal ist die beste Empfehlung, einen Vertrag nicht abzuschließen.</dd>
+            </div>
+            <div class="grid gap-2 sm:grid-cols-[180px_1fr] sm:gap-8" data-reveal>
+              <dt class="font-serif text-[1.375rem] leading-snug">Transparent erklärt</dt>
+              <dd class="text-muted">Sie erfahren, wie Produkte funktionieren, was sie kosten und wie ich vergütet werde. Entscheidungen treffen Sie in Ruhe.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Ablauf -->
+        <ol class="mt-20 grid gap-12 md:mt-28 md:grid-cols-3 md:gap-10">
+          <li class="border-t border-deep pt-8" data-reveal>
+            <span class="block font-serif text-[4.5rem] leading-none text-cta" aria-hidden="true">1</span>
+            <h3 class="mt-6 text-[1.625rem]">Erstgespräch buchen</h3>
+            <p class="mt-3 text-muted">Sie wählen online einen Termin – vor Ort, per Telefon oder per Video. Wir sprechen über Ihre Ziele und Wünsche.</p>
+          </li>
+          <li class="border-t border-deep pt-8 md:mt-12" data-reveal>
+            <span class="block font-serif text-[4.5rem] leading-none text-cta" aria-hidden="true">2</span>
+            <h3 class="mt-6 text-[1.625rem]">Analyse &amp; klare Empfehlung</h3>
+            <p class="mt-3 text-muted">Ich analysiere Ihre bestehenden Verträge und Anlagen. Die Ergebnisse besprechen wir gemeinsam, verständlich aufbereitet, und Sie erhalten eine klare, nachvollziehbare Empfehlung.</p>
+          </li>
+          <li class="border-t border-deep pt-8 md:mt-24" data-reveal>
+            <span class="block font-serif text-[4.5rem] leading-none text-cta" aria-hidden="true">3</span>
+            <h3 class="mt-6 text-[1.625rem]">Klärung der Fragen und Umsetzung</h3>
+            <p class="mt-3 text-muted">Wir klären alle offenen Fragen, und Sie entscheiden ohne Druck. Die Umsetzung übernehme ich anschließend für Sie, von den Anträgen bis zur Abstimmung mit den Gesellschaften.</p>
+          </li>
+        </ol>
+
+        <div class="mt-16 md:mt-20" data-reveal>
+          <a href="#termin" class="btn-primary">Erstgespräch buchen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · Über mich -->
+    <section id="ueber-mich" class="section bg-white" aria-labelledby="ueber-title">
+      <div class="container-x grid items-start gap-14 md:grid-cols-12 md:gap-10">
+        <div class="md:col-span-6" data-reveal>
+          <p class="label">Über mich</p>
+          <h2 id="ueber-title" class="h2 mt-5">Marco Jaspers</h2>
+          <p class="mt-3 text-[13px] font-medium uppercase tracking-[0.2em] text-cta">Inhaber von BergKapital</p>
+          <div class="mt-8 space-y-5 text-muted">
+            <p>Meine berufliche Laufbahn begann in der Pharmabranche, wo ich mich zum staatlich geprüften Chemotechniker weiterbildete. Präzision, Sorgfalt und ein Blick für Details prägen meine Arbeit bis heute.</p>
+            <p>Seit 2019 bin ich in der Finanzbranche tätig. Meine ersten Schritte machte ich bei einem der am schnellsten wachsenden Finanzdienstleister Deutschlands, wo ich mich zu einem der erfahrenen Berater an meinem Standort entwickelte. Aus meiner Begeisterung für Geldanlagen entstand dort auch meine Leidenschaft für Versicherungen und schließlich der Schritt zur eigenen Marke.</p>
+            <p>Meine Passion ist die persönliche Beratung und langfristige Betreuung meiner Mandanten. Gemeinsam finden wir den richtigen Weg zum Gipfel.</p>
+          </div>
+          <blockquote class="mt-10 border-l border-cta pl-6">
+            <p class="text-muted">Dabei steht für mich Qualität an erster Stelle. Denn: Wer billig kauft, kauft zweimal.</p>
+            <p class="mt-3 font-serif text-[1.75rem] leading-snug text-ink md:text-[2rem]">Billig ist nicht gleich günstig.</p>
+          </blockquote>
+          <h3 class="mt-12 font-sans text-[11px] font-medium uppercase tracking-wide3 text-muted">Werdegang &amp; Qualifikationen</h3>
+          <ul class="mt-4 border-t border-line">
+            <li class="flex flex-col gap-1 border-b border-line py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span>In der Finanzbranche tätig</span><span class="shrink-0 text-[13px] text-muted">seit 2019</span></li>
+            <li class="flex flex-col gap-1 border-b border-line py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span>Staatlich geprüfter Chemotechniker</span><span class="shrink-0 text-[13px] text-muted">Pharmabranche</span></li>
+            <li class="flex flex-col gap-1 border-b border-line py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span>Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO</span><span class="shrink-0 text-[13px] text-muted">Reg.-Nr. D-U35K-GZC7J-30</span></li>
+            <li class="flex flex-col gap-1 border-b border-line py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span>Finanzanlagenvermittler mit Erlaubnis nach § 34f Abs. 1 GewO</span><span class="shrink-0 text-[13px] text-muted">Reg.-Nr. D-F-181-4PDP-90</span></li>
+          </ul>
+          <div class="mt-12">
+            <a href="#termin" class="btn-outline">Persönlich kennenlernen</a>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 md:col-start-8 md:sticky md:top-44" data-reveal>
+          <!-- TODO: echtes Porträt (Hochformat 4:5) als <img loading="lazy" width="… " height="…" alt="Marco Jaspers"> -->
+          <div class="placeholder aspect-[4/5] w-full">
+            <span class="font-serif text-[9rem] leading-none text-white" aria-hidden="true">MJ</span>
+            <p class="placeholder-note">Platzhalter · Porträt 4:5</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Kennzahlen – aus (erst mit echten Zahlen aktivieren) -->
+    <!-- TODO: KENNZAHLEN-Sektion aktivieren, sobald echte Zahlen vorliegen (Count-up per data-count in js/main.js vorbereitet) -->
+
+    <!-- 8 · Bewertungen – aus (nur echte Zitate mit Quelle) -->
+    <!-- TODO: BEWERTUNGEN-Sektion aktivieren, sobald echte Bewertungen mit Quelle vorliegen -->
+
+    <!-- 9 · Termin -->
+    <section id="termin" class="section bg-paper" aria-labelledby="termin-title">
+      <div class="container-x">
+        <div class="max-w-[640px]" data-reveal>
+          <p class="label">Termin</p>
+          <h2 id="termin-title" class="h2 mt-5">Direkt ein Erstgespräch eintragen</h2>
+          <p class="lead mt-6">Wählen Sie einfach einen passenden Termin. Das Erstgespräch dient dem Kennenlernen, ohne Verpflichtung.</p>
+        </div>
+
+        <div class="mt-14 grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-8" data-reveal>
+            <div class="flex min-h-[520px] flex-col items-center justify-center rounded border border-line bg-white p-8 text-center md:min-h-[650px]" data-booking data-booking-url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0t7whhMw21Npo-pmh2Z7r8WOwomFUIZstz8-kZREcUcKysibICFTpAvCOieQU1JruTdF458reT?gv=true">
+              <svg class="icon h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+              <p class="mt-6 max-w-[380px] font-serif text-[1.5rem] leading-snug">Terminkalender</p>
+              <p class="mt-3 max-w-[400px] text-[15px] text-muted">Beim Laden des Kalenders werden Daten an Google übertragen. Mehr dazu in der <a href="/datenschutz.html" class="underline underline-offset-4 hover:text-ink">Datenschutzerklärung</a>.</p>
+              <button type="button" class="btn-primary mt-8" data-booking-load>Kalender laden</button>
+            </div>
+            <p class="mt-5 text-[14px] text-muted">
+              <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0t7whhMw21Npo-pmh2Z7r8WOwomFUIZstz8-kZREcUcKysibICFTpAvCOieQU1JruTdF458reT" target="_blank" rel="noopener" class="link-line text-ink">Terminseite in neuem Tab öffnen
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+              </a>
+            </p>
+            <p class="mt-6 border-t border-line pt-5 text-[15px] text-muted">Sie sind bereits Mandant? <a href="/mandanten.html" class="underline underline-offset-4 hover:text-ink">Hier vereinbaren Sie Ihr Jahresgespräch oder ein kurzes Telefonat.</a></p>
+          </div>
+
+          <aside class="lg:col-span-4" data-reveal>
+            <div class="border-t border-deep pt-8">
+              <h3 class="text-[1.75rem]">Lieber direkt schreiben?</h3>
+              <p class="mt-4 text-muted">Schicken Sie mir eine kurze Nachricht per E-Mail oder WhatsApp. Ich melde mich in der Regel am selben Werktag zurück.</p><!-- TODO: Antwortzeit bestätigen -->
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:flex-col lg:items-start">
+              <a href="mailto:info@bergkapital.de?subject=Anfrage%20%C3%BCber%20die%20Website" class="btn-outline w-full sm:w-auto">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+                Per E-Mail schreiben
+              </a>
+              <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch." target="_blank" rel="noopener" class="btn-outline w-full sm:w-auto">
+                <svg class="h-4 w-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+                Per WhatsApp schreiben
+              </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Rückruf: für alle, die weder Kalender noch WhatsApp nutzen möchten -->
+        <!-- TODO: Für den Livegang Formular-Versand über einen eigenen Dienst einrichten; aktuell öffnet das Absenden das E-Mail-Programm -->
+        <div id="rueckruf" class="mt-16 grid scroll-mt-28 gap-10 border-t border-line pt-14 md:mt-20 md:pt-16 lg:grid-cols-12">
+          <div class="lg:col-span-4" data-reveal>
+            <h3 class="text-[1.75rem] md:text-[2rem]">Lieber angerufen werden?</h3>
+            <p class="mt-4 text-muted">Hinterlassen Sie Ihre Kontaktdaten, dann melde ich mich bei Ihnen.</p>
+          </div>
+          <form class="grid gap-5 rounded border border-line bg-white p-6 sm:grid-cols-2 md:p-8 lg:col-span-8" action="mailto:info@bergkapital.de" method="post" enctype="text/plain" data-callback data-reveal>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="cb-name">Name <span aria-hidden="true">*</span></label>
+              <input class="field" id="cb-name" name="Name" type="text" autocomplete="name" required>
+            </div>
+            <div>
+              <label class="field-label" for="cb-phone">Telefon <span aria-hidden="true">*</span></label>
+              <input class="field" id="cb-phone" name="Telefon" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div>
+              <label class="field-label" for="cb-email">E-Mail</label>
+              <input class="field" id="cb-email" name="E-Mail" type="email" autocomplete="email">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="cb-time">Wann erreiche ich Sie am besten?</label>
+              <input class="field" id="cb-time" name="Erreichbarkeit" type="text">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label" for="cb-message">Worum geht es?</label>
+              <textarea class="field min-h-[110px]" id="cb-message" name="Anliegen" rows="3"></textarea>
+            </div>
+            <div class="flex items-start gap-3 sm:col-span-2">
+              <input class="mt-1 h-4 w-4 shrink-0 accent-[rgb(var(--c-cta))]" id="cb-consent" name="Einwilligung" type="checkbox" value="ja" required>
+              <label class="text-[14px] leading-relaxed text-muted" for="cb-consent">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a href="/datenschutz.html" class="underline underline-offset-4 hover:text-ink">Datenschutzerklärung</a>. <span aria-hidden="true">*</span></label>
+            </div>
+            <div class="sm:col-span-2">
+              <button type="submit" class="btn-primary">Anruf anfordern</button>
+              <p class="mt-3 text-[13px] text-muted" data-callback-status role="status">Beim Absenden öffnet sich Ihr E-Mail-Programm mit den eingetragenen Angaben.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · FAQ -->
+    <section id="faq" class="section bg-white" aria-labelledby="faq-title">
+      <div class="container-x grid gap-12 md:grid-cols-12">
+        <div class="md:col-span-4" data-reveal>
+          <p class="label">Häufige Fragen</p>
+          <h2 id="faq-title" class="h2 mt-5">Gut zu wissen</h2>
+          <p class="mt-6 text-muted">Ihre Frage ist nicht dabei?</p>
+          <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch." target="_blank" rel="noopener" class="link-line mt-4">Per WhatsApp fragen</a>
+        </div>
+        <div class="border-t border-line md:col-span-7 md:col-start-6" data-reveal>
+          <details class="faq border-b border-line">
+            <summary>Kostet das Erstgespräch etwas?<span class="plus" aria-hidden="true"></span></summary>
+            <!-- TODO: kostenlos bestätigen -->
+            <p class="pb-7 pr-10 text-muted">Nein. Das Erstgespräch ist kostenlos und dient dem gegenseitigen Kennenlernen. Sie erfahren, wie ich arbeite, und wir klären, ob und wie ich Sie unterstützen kann.</p>
+          </details>
+          <details class="faq border-b border-line">
+            <summary>Findet das Gespräch vor Ort oder online statt?<span class="plus" aria-hidden="true"></span></summary>
+            <!-- TODO: Optionen (vor Ort / Telefon / Video) bestätigen -->
+            <p class="pb-7 pr-10 text-muted">Beides ist möglich. Gern treffen wir uns persönlich in Wuppertal oder sprechen per Telefon oder Video, wenn Ihnen das lieber ist.</p>
+          </details>
+          <details class="faq border-b border-line">
+            <summary>Was bedeutet „Versicherungsmakler“?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-7 pr-10 text-muted">Ein Makler ist nicht an eine Versicherungsgesellschaft gebunden, sondern steht rechtlich auf der Seite des Mandanten. Er vergleicht Angebote verschiedener Anbieter und empfiehlt, was zu Ihrem Bedarf passt. Details finden Sie in der <a href="/erstinformation.html" class="underline underline-offset-4 hover:text-ink">Erstinformation</a>.</p>
+          </details>
+          <details class="faq border-b border-line">
+            <summary>Muss ich danach etwas abschließen?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-7 pr-10 text-muted">Nein. Sie entscheiden in Ruhe und ohne Verpflichtung. Eine gute Beratung erkennt man auch daran, dass sie Ihnen Zeit lässt.</p>
+          </details>
+          <details class="faq border-b border-line">
+            <summary>Welche Unterlagen brauche ich?<span class="plus" aria-hidden="true"></span></summary>
+            <p class="pb-7 pr-10 text-muted">Für das Erstgespräch brauchen Sie nichts vorzubereiten. Wenn Sie möchten, bringen Sie bestehende Versicherungsverträge, Depotauszüge oder Renteninformationen mit. Dann können wir direkt einen ersten Blick darauf werfen.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · Kontakt -->
+    <section id="kontakt" class="section bg-paper" aria-labelledby="kontakt-title">
+      <div class="container-x grid gap-14 md:grid-cols-12">
+        <div class="md:col-span-5" data-reveal>
+          <p class="label">Kontakt</p>
+          <h2 id="kontakt-title" class="h2 mt-5">Sprechen wir miteinander.</h2>
+          <p class="lead mt-6">Ob Termin, kurze Frage oder zweite Meinung zu einem Vertrag: Ich freue mich auf Ihre Nachricht.</p>
+          <a href="#termin" class="btn-primary mt-10">Erstgespräch buchen</a>
+        </div>
+
+        <dl class="border-t border-line md:col-span-6 md:col-start-7" data-reveal>
+          <div class="grid gap-1 border-b border-line py-5 sm:grid-cols-[150px_1fr] sm:gap-6">
+            <dt class="label">Telefon</dt>
+            <dd><a href="tel:+491604921092" class="hover:text-muted">+49 160 4921092</a></dd>
+          </div>
+          <div class="grid gap-1 border-b border-line py-5 sm:grid-cols-[150px_1fr] sm:gap-6">
+            <dt class="label">E-Mail</dt>
+            <dd><a href="mailto:info@bergkapital.de" class="hover:text-muted">info@bergkapital.de</a></dd>
+          </div>
+          <div class="grid gap-1 border-b border-line py-5 sm:grid-cols-[150px_1fr] sm:gap-6">
+            <dt class="label">WhatsApp</dt>
+            <dd><a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch." target="_blank" rel="noopener" class="hover:text-muted">Nachricht schreiben</a></dd>
+          </div>
+          <div class="grid gap-1 border-b border-line py-5 sm:grid-cols-[150px_1fr] sm:gap-6">
+            <dt class="label">Erreichbarkeit</dt>
+            <dd>Mo–Fr 9:00–19:00 Uhr</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12 · Footer -->
+  <footer class="on-dark border-t-2 border-glow bg-deep text-white">
+    <div class="container-x grid gap-12 py-16 md:grid-cols-12 md:py-20">
+      <div class="md:col-span-5">
+        <!-- Logo auf Logo-Schwarz; "screen" blendet den Bildhintergrund nahtlos aus. TODO: bei Bedarf freigestellte PNG/SVG-Version vom Gestalter anfordern -->
+        <a href="/" class="-ml-3 inline-block" aria-label="BergKapital – zur Startseite">
+          <img src="/assets/brand/bergkapital-logo.jpg" alt="BergKapital – Finanzberatung | Versicherungsmakler" width="900" height="497" loading="lazy" decoding="async" class="logo-on-dark block h-auto w-[260px]">
+        </a>
+        <p class="mt-6 max-w-[320px] text-[15px] text-white/70">Festes Fundament. Klarer Weg, ruhiger Aufstieg.</p>
+      </div>
+      <nav class="md:col-span-2" aria-label="Footer-Navigation">
+        <p class="label-light">Seite</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-white/80">
+          <li><a href="#leistungen" class="hover:text-glow">Leistungen</a></li>
+          <li><a href="#arbeitsweise" class="hover:text-glow">Arbeitsweise</a></li>
+          <li><a href="#ueber-mich" class="hover:text-glow">Über mich</a></li>
+          <li><a href="#termin" class="hover:text-glow">Termin</a></li>
+          <li><a href="/kundenapp.html" class="hover:text-glow">Kundenapp</a></li>
+          <li><a href="/mandanten.html#dringend" class="whitespace-nowrap hover:text-glow">Schaden melden</a></li>
+        </ul>
+      </nav>
+      <div class="md:col-span-3">
+        <p class="label-light">Kontakt</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-white/80">
+          <li><a href="tel:+491604921092" class="hover:text-glow">+49 160 4921092</a></li>
+          <li><a href="mailto:info@bergkapital.de" class="hover:text-glow">info@bergkapital.de</a></li>
+        </ul>
+      </div>
+      <nav class="md:col-span-2" aria-label="Rechtliches">
+        <p class="label-light">Rechtliches</p>
+        <ul class="mt-5 space-y-3 text-[15px] text-white/80">
+          <li><a href="/impressum.html" class="hover:text-glow">Impressum</a></li>
+          <li><a href="/datenschutz.html" class="hover:text-glow">Datenschutz</a></li>
+          <li><a href="/erstinformation.html" class="hover:text-glow">Erstinformation</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-x flex flex-col gap-2 py-6 text-[12px] text-white/60 sm:flex-row sm:justify-between">
+        <p>© 2026 BergKapital · Inhaber Marco Jaspers</p>
+        <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Schwebender WhatsApp-Button (Desktop) -->
+  <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch." target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 hidden h-14 w-14 items-center justify-center rounded-full border border-line bg-white transition-colors hover:border-cta md:flex" aria-label="Per WhatsApp schreiben">
+    <svg class="h-6 w-6 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
+
+  <!-- Mobile Leiste: Termin + WhatsApp -->
+  <div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-line bg-white/95 p-2.5 backdrop-blur md:hidden">
+    <a href="#termin" class="btn-primary px-3 py-3">Termin</a>
+    <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Erstgespr%C3%A4ch." target="_blank" rel="noopener" class="btn-outline px-3 py-3">
+      <svg class="h-4 w-4 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <script src="/vendor/gsap.min.js" defer></script>
+  <script src="/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="/vendor/lenis.min.js" defer></script>
+  <script src="/js/main.js?v=20261109e" defer></script>
+</body>
+</html>

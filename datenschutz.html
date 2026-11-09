@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de" class="theme-marke">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutz | BergKapital – Finanzberatung &amp; Versicherungsmakler</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2A2E33">
+  <script>
+    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
+    (function () {
+      var v = new URLSearchParams(location.search).get('v');
+      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
+      if (v !== 'klassisch') v = 'marke';
+      document.documentElement.classList.remove('theme-marke');
+      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
+      document.documentElement.dataset.variant = v;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=20261109g">
+</head>
+<body>
+  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
+    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
+      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
+      <nav class="flex items-center gap-1" aria-label="Variante">
+        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
+        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
+        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
+      </nav>
+    </div>
+    <script>
+      (function () {
+        var cur = document.documentElement.dataset.variant;
+        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
+      })();
+    </script>
+  </div>
+  <header class="border-b border-line bg-white">
+    <div class="container-x flex items-center justify-between gap-6 py-5">
+      <a href="/" class="block" aria-label="BergKapital – zur Startseite">
+        <span class="wordmark block text-[1.25rem]"><b>Berg</b><span>Kapital</span></span>
+        <span class="wordmark-sub">Finanzberatung&nbsp;&nbsp;|&nbsp;&nbsp;Versicherungsmakler</span>
+      </a>
+      <a href="/" class="link-line whitespace-nowrap text-[12px]"><span class="hidden sm:inline">Zur&nbsp;</span>Startseite</a>
+    </div>
+  </header>
+  <main class="section">
+    <article class="container-x max-w-[760px]">
+      <!-- TODO: vollständige Datenschutzerklärung erstellen und rechtlich prüfen lassen -->
+      <p class="label">Rechtliches</p>
+      <h1 class="mt-5 text-[2.75rem] md:text-[3.5rem]">Datenschutz</h1>
+      <div class="mt-12 space-y-4 text-muted [&_h2]:!mt-12 [&_h2]:font-serif [&_h2]:text-[1.625rem] [&_h2]:text-ink">
+<h2>1. Verantwortlicher</h2>
+<p>BergKapital, Inhaber Marco Jaspers, Engelbert-Wüster-Weg 18, 42369 Wuppertal, info@bergkapital.de</p>
+<h2>2. Hosting</h2>
+<!-- TODO: Anschrift von netcup, Serverstandort und Speicherdauer der Logfiles prüfen; AV-Vertrag im netcup Customer Control Panel abschließen, bevor die Seite live geht -->
+<p>Diese Website wird bei der netcup GmbH, Daimlerstraße 25, 76185 Karlsruhe, gehostet. Beim Aufruf der Seiten verarbeitet netcup in unserem Auftrag technisch notwendige Daten, die in sogenannten Server-Logfiles gespeichert werden. Dazu gehören:</p>
+<ul class="list-disc space-y-1 pl-5">
+  <li>IP-Adresse des anfragenden Geräts</li>
+  <li>Datum und Uhrzeit des Zugriffs</li>
+  <li>aufgerufene Seite oder Datei und übertragene Datenmenge</li>
+  <li>zuvor besuchte Seite (Referrer), sofern übermittelt</li>
+  <li>verwendeter Browser und verwendetes Betriebssystem</li>
+</ul>
+<p>Die Verarbeitung ist erforderlich, um die Website sicher und stabil bereitzustellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im zuverlässigen und sicheren Betrieb dieser Website. Mit netcup besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.</p>
+<p>[Platzhalter: Speicherdauer der Server-Logfiles.]</p>
+<h2>3. Schriftarten</h2>
+<p>Diese Website verwendet lokal eingebundene Schriftarten. Beim Aufruf der Seite wird keine Verbindung zu Servern Dritter aufgebaut.</p>
+<h2>4. Terminbuchung über Google Kalender</h2>
+<p>Für die Online-Terminbuchung kann auf der Startseite und auf der Terminseite für Mandanten ein Kalender der Google Ireland Ltd. eingebunden werden. Er wird erst geladen, wenn Sie aktiv auf „Kalender laden“ klicken (Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO). Erst dann werden Daten, z. B. Ihre IP-Adresse, an Google übertragen. [Platzhalter: weitere Angaben zu Google, Drittlandübermittlung, Widerruf.]</p>
+<h2>5. Kontakt per WhatsApp, E-Mail und Telefon</h2>
+<p>Wenn Sie das Rückruf-Formular auf unserer Website nutzen, öffnet sich Ihr E-Mail-Programm mit den eingetragenen Angaben. Übertragen werden diese erst, wenn Sie die E-Mail selbst absenden. Wir verwenden sie zur Bearbeitung Ihrer Anfrage.</p>
+<p>[Platzhalter: Hinweise zur Kommunikation über WhatsApp (Meta Platforms Ireland Ltd.), E-Mail und Telefon.]</p>
+<h2>6. Ihre Rechte</h2>
+<p>[Platzhalter: Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch, Beschwerderecht bei der Aufsichtsbehörde.]</p>
+      </div>
+    </article>
+  </main>
+  <footer class="border-t-2 border-cta bg-white">
+    <div class="container-x flex flex-col gap-4 py-8 text-[13px] text-muted sm:flex-row sm:justify-between">
+      <p>© 2026 BergKapital · Inhaber Marco Jaspers</p>
+      <nav aria-label="Rechtliches"><ul class="flex gap-6">
+        <li><a href="/impressum.html" class="hover:text-ink">Impressum</a></li>
+        <li><a href="/datenschutz.html" class="hover:text-ink">Datenschutz</a></li>
+        <li><a href="/erstinformation.html" class="hover:text-ink">Erstinformation</a></li>
+      </ul></nav>
+    </div>
+  </footer>
+</body>
+</html>

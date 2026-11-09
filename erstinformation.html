@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de" class="theme-marke">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erstinformation | BergKapital – Finanzberatung &amp; Versicherungsmakler</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2A2E33">
+  <script>
+    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
+    (function () {
+      var v = new URLSearchParams(location.search).get('v');
+      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
+      if (v !== 'klassisch') v = 'marke';
+      document.documentElement.classList.remove('theme-marke');
+      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
+      document.documentElement.dataset.variant = v;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=20261109g">
+</head>
+<body>
+  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
+    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
+      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
+      <nav class="flex items-center gap-1" aria-label="Variante">
+        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
+        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
+        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
+      </nav>
+    </div>
+    <script>
+      (function () {
+        var cur = document.documentElement.dataset.variant;
+        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
+      })();
+    </script>
+  </div>
+  <header class="border-b border-line bg-white">
+    <div class="container-x flex items-center justify-between gap-6 py-5">
+      <a href="/" class="block" aria-label="BergKapital – zur Startseite">
+        <span class="wordmark block text-[1.25rem]"><b>Berg</b><span>Kapital</span></span>
+        <span class="wordmark-sub">Finanzberatung&nbsp;&nbsp;|&nbsp;&nbsp;Versicherungsmakler</span>
+      </a>
+      <a href="/" class="link-line whitespace-nowrap text-[12px]"><span class="hidden sm:inline">Zur&nbsp;</span>Startseite</a>
+    </div>
+  </header>
+  <main class="section">
+    <article class="container-x max-w-[760px]">
+      <!-- TODO: Erstinformation nach § 15 VersVermV / § 12 FinVermV vervollständigen und rechtlich prüfen lassen -->
+      <p class="label">Rechtliches</p>
+      <h1 class="mt-5 text-[2.75rem] md:text-[3.5rem]">Erstinformation</h1>
+      <div class="mt-12 space-y-4 text-muted [&_h2]:!mt-12 [&_h2]:font-serif [&_h2]:text-[1.625rem] [&_h2]:text-ink">
+<p class="text-[17px]">Statusbezogene Informationen nach § 15 VersVermV und § 12 FinVermV.</p>
+<h2>Name und Anschrift</h2>
+<p>Marco Jaspers (Einzelunternehmer)<br>handelnd unter: BergKapital – Finanzberatung &amp; Versicherungsmakler<br>Engelbert-Wüster-Weg 18<br>42369 Wuppertal<br>Telefon: +49 160 4921092 · E-Mail: info@bergkapital.de</p>
+<h2>Status</h2>
+<p>Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO<br>Finanzanlagenvermittler mit Erlaubnis nach § 34f Abs. 1 GewO<br>Erlaubnisbehörde: Bergische Industrie- und Handelskammer Wuppertal-Solingen-Remscheid</p>
+<h2>Registrierung</h2>
+<p>Vermittlerregister-Nr. § 34d: D-U35K-GZC7J-30<br>Vermittlerregister-Nr. § 34f: D-F-181-4PDP-90<br>Überprüfbar unter www.vermittlerregister.info</p>
+<h2>Beteiligungen</h2>
+<p>Wir halten keine Beteiligungen an Stimmrechten oder dem Kapital von Versicherungsunternehmen. Es gibt keine Beteiligungen von Versicherungsunternehmen an den Stimmrechten oder dem Kapital unseres Unternehmens.</p>
+<h2>Beratung und Vergütung</h2>
+<!-- TODO: rechtlich prüfen lassen: Vergütung durch Verbraucher bei Nettopolicen und Servicevereinbarungen (§ 34d GewO); Servicegebühr bei Finanzanlagen und Offenlegung nach FinVermV; klären, ob bei Finanzanlagen Bestandspflegeprovisionen fließen -->
+<p>Wir bieten im Zuge der Vermittlung eine Beratung gemäß den gesetzlichen Vorgaben an.</p>
+<p><span class="font-medium text-ink">Versicherungen</span><br>Für die Vermittlung und Betreuung von Versicherungen erhalten wir in der Regel eine Abschluss- und Vertriebscourtage sowie Bestands- und Pflegeprovisionen vom Produktanbieter. Diese sind bereits im Versicherungsbeitrag enthalten und von Ihnen nicht gesondert zu zahlen. Bei Nettopolicen ist keine Courtage enthalten; die Vergütung wird in diesem Fall vorab schriftlich mit Ihnen vereinbart.</p>
+<p><span class="font-medium text-ink">Finanzanlagen</span><br>Für die Beratung und Betreuung bei Finanzanlagen vereinbaren wir mit Ihnen eine Servicegebühr. Höhe und Berechnung, auch prozentual, werden vorab schriftlich festgelegt. Wir informieren Sie vor Abschluss des jeweiligen Geschäfts über Art und Höhe der Vergütung und etwaiger Zuwendungen.</p>
+<p><span class="font-medium text-ink">Zusätzliche Leistungen</span><br>Für zusätzliche Dienstleistungen können gesonderte Servicevereinbarungen getroffen werden, die weitere Kosten verursachen können. Sie werden vorab schriftlich mit Ihnen vereinbart.</p>
+<h2>Beratungsgrundlage</h2>
+<!-- TODO: Entwurf von Claude; rechtlich prüfen lassen und mit dem Erlaubnisumfang nach § 34f Abs. 1 GewO abgleichen -->
+<p>Unser Rat und unsere Empfehlungen stützen sich auf eine hinreichende Zahl von auf dem Markt angebotenen Versicherungsprodukten und Investmentfonds verschiedener Anbieter. Eine Übersicht der einbezogenen Anbieter erhalten Sie auf Wunsch.</p>
+<p>Maßgeblich sind Ihre persönlichen Wünsche, Ziele und Bedürfnisse sowie die Angaben, die Sie uns machen. Die Auswahl treffen wir nach fachlichen Kriterien. Dazu gehören je nach Produkt insbesondere die Eignung für Ihre Situation, Leistungen und Bedingungen, Kosten sowie Qualität und Stabilität des Anbieters.</p>
+<p>Beraten wir im Einzelfall auf Grundlage einer eingeschränkten Marktauswahl, geschieht dies auf Ihren ausdrücklichen Wunsch oder nach einem gesonderten Hinweis vor der Beratung. In diesem Fall nennen wir Ihnen die Grundlage unserer Auswahl und die einbezogenen Anbieter.</p>
+<h2>Schlichtungsstellen</h2>
+<!-- TODO: Schlichtungsstelle für Finanzanlagen klären -->
+<p><span class="font-medium text-ink">Versicherungsombudsmann e. V.</span><br>Postfach 08 06 32<br>10006 Berlin<br>Tel.: 0800 3696000 (kostenfrei aus deutschen Telefonnetzen)<br>Fax: 0800 3699000 (kostenfrei aus deutschen Telefonnetzen)<br>Internet: <a href="https://www.versicherungsombudsmann.de" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-ink">www.versicherungsombudsmann.de</a></p>
+<p><span class="font-medium text-ink">Ombudsmann für die Private Kranken- und Pflegeversicherung</span><br>Postfach 06 02 22<br>10052 Berlin<br>Tel.: 0800 2550444 (kostenfrei aus deutschen Telefonnetzen)<br>Fax: 030 20458931<br>Internet: <a href="https://www.pkv-ombudsmann.de" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-ink">www.pkv-ombudsmann.de</a></p>
+      </div>
+    </article>
+  </main>
+  <footer class="border-t-2 border-cta bg-white">
+    <div class="container-x flex flex-col gap-4 py-8 text-[13px] text-muted sm:flex-row sm:justify-between">
+      <p>© 2026 BergKapital · Inhaber Marco Jaspers</p>
+      <nav aria-label="Rechtliches"><ul class="flex gap-6">
+        <li><a href="/impressum.html" class="hover:text-ink">Impressum</a></li>
+        <li><a href="/datenschutz.html" class="hover:text-ink">Datenschutz</a></li>
+        <li><a href="/erstinformation.html" class="hover:text-ink">Erstinformation</a></li>
+      </ul></nav>
+    </div>
+  </footer>
+</body>
+</html>

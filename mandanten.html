@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="de" class="theme-marke">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Termin für Mandanten | BergKapital – Finanzberatung &amp; Versicherungsmakler</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+  <!-- Diese Seite richtet sich nur an bestehende Mandanten: noindex auch nach dem Livegang beibehalten -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2A2E33">
+  <script>
+    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
+    (function () {
+      var v = new URLSearchParams(location.search).get('v');
+      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
+      if (v !== 'klassisch') v = 'marke';
+      document.documentElement.classList.remove('theme-marke');
+      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
+      document.documentElement.dataset.variant = v;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=20261109g">
+</head>
+<body>
+  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
+    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
+      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
+      <nav class="flex items-center gap-1" aria-label="Variante">
+        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
+        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
+        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
+      </nav>
+    </div>
+    <script>
+      (function () {
+        var cur = document.documentElement.dataset.variant;
+        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
+      })();
+    </script>
+  </div>
+  <header class="border-b border-line bg-white">
+    <div class="container-x flex items-center justify-between gap-6 py-5">
+      <a href="/" class="block" aria-label="BergKapital – zur Startseite">
+        <span class="wordmark block text-[1.25rem]"><b>Berg</b><span>Kapital</span></span>
+        <span class="wordmark-sub">Finanzberatung&nbsp;&nbsp;|&nbsp;&nbsp;Versicherungsmakler</span>
+      </a>
+      <a href="/" class="link-line whitespace-nowrap text-[12px]"><span class="hidden sm:inline">Zur&nbsp;</span>Startseite</a>
+    </div>
+  </header>
+  <main>
+    <section class="section pb-12 md:pb-16" aria-labelledby="mandanten-title">
+      <div class="container-x">
+        <p class="label">Für Mandanten</p>
+        <h1 id="mandanten-title" class="mt-5 text-[2.75rem] md:text-[3.5rem]">Termin vereinbaren</h1>
+        <p class="lead mt-6 max-w-[640px]">Wählen Sie das Gespräch, das gerade zu Ihrem Anliegen passt.</p>
+        <p class="mt-4 text-[15px] text-muted">Noch kein Mandant? <a href="/#termin" class="underline underline-offset-4 hover:text-ink">Hier geht es zum Erstgespräch.</a></p>
+      </div>
+    </section>
+
+    <section class="border-t border-line bg-paper py-14 md:py-20" aria-labelledby="jahresgespraech-title">
+      <div class="container-x grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <p class="label">60 Minuten</p><!-- TODO: Gesprächsformen bestätigen -->
+          <h2 id="jahresgespraech-title" class="mt-4 text-[2rem] leading-tight">Jahresgespräch</h2>
+          <p class="mt-4 text-muted">Wir prüfen gemeinsam Ihr Depot und Ihre Verträge und schauen, ob beides noch zu Ihrer Lebenssituation passt.</p>
+          <p class="mt-4 text-[15px] text-muted">Bitte geben Sie bei der Buchung als Anliegen „Jahresgespräch“ an.</p>
+        </div>
+        <div class="lg:col-span-8">
+            <!-- Nutzt bewusst dieselbe Google-Terminplanung wie das Erstgespräch auf der Startseite -->
+            <div class="flex min-h-[340px] flex-col items-center justify-center rounded border border-line bg-white p-8 text-center" data-booking data-booking-title="Terminbuchung Jahresgespräch – Google Kalender" data-booking-url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0t7whhMw21Npo-pmh2Z7r8WOwomFUIZstz8-kZREcUcKysibICFTpAvCOieQU1JruTdF458reT?gv=true">
+              <svg class="icon h-9 w-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+              <p class="mt-5 font-serif text-[1.5rem] leading-snug">Terminkalender</p>
+              <p class="mt-3 max-w-[400px] text-[15px] text-muted">Beim Laden des Kalenders werden Daten an Google übertragen. Mehr dazu in der <a href="/datenschutz.html" class="underline underline-offset-4 hover:text-ink">Datenschutzerklärung</a>.</p>
+              <button type="button" class="btn-primary mt-7" data-booking-load>Kalender laden</button>
+            </div>
+            <p class="mt-5 text-[14px] text-muted">
+              <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0t7whhMw21Npo-pmh2Z7r8WOwomFUIZstz8-kZREcUcKysibICFTpAvCOieQU1JruTdF458reT" target="_blank" rel="noopener" class="link-line text-ink">Terminseite in neuem Tab öffnen <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><span class="sr-only"> (öffnet in neuem Tab)</span></a>
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-line py-14 md:py-20" aria-labelledby="telefonat-title">
+      <div class="container-x grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <p class="label">Ca. 15 Minuten</p><!-- TODO: Dauer bestätigen -->
+          <h2 id="telefonat-title" class="mt-4 text-[2rem] leading-tight">Kurzes Telefonat</h2>
+        </div>
+        <div class="lg:col-span-8">
+          <p class="text-muted">Für einzelne Fragen und kleine Änderungen, die sich schnell klären lassen. Dafür brauchen Sie keinen Termin: Sagen Sie mir kurz, worum es geht, und ich rufe Sie zurück.</p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <a href="/#rueckruf" class="btn-primary">Rückruf anfordern</a>
+            <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20habe%20ein%20Anliegen%20zu%20meinen%20Vertr%C3%A4gen." target="_blank" rel="noopener" class="btn-outline">Per WhatsApp schreiben<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dringend" class="border-t border-line bg-paper py-14 md:py-20" aria-labelledby="dringend-title">
+      <div class="container-x">
+        <div class="max-w-[640px]">
+          <h2 id="dringend-title" class="text-[2rem] leading-tight">Ein Schaden oder etwas Dringendes?</h2>
+          <p class="mt-4 text-muted">Dann warten Sie bitte nicht auf einen freien Termin, sondern melden Sie sich direkt bei mir.</p>
+        </div>
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <a href="tel:+491604921092" class="btn-primary" title="+49 160 4921092">Anrufen<span class="sr-only"> unter +49 160 4921092</span></a>
+          <a href="https://wa.me/491604921092?text=Hallo%20Herr%20Jaspers%2C%20ich%20habe%20ein%20Anliegen%20zu%20meinen%20Vertr%C3%A4gen." target="_blank" rel="noopener" class="btn-outline">WhatsApp schreiben<span class="sr-only"> (öffnet in neuem Tab)</span></a>
+          <a href="mailto:info@bergkapital.de?subject=Schaden%20oder%20Dringendes" class="btn-outline">E-Mail schreiben</a>
+          <a href="/kundenapp.html" class="btn-outline">Kundenapp für Mandanten</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="border-t-2 border-cta bg-white">
+    <div class="container-x flex flex-col gap-4 py-8 text-[13px] text-muted sm:flex-row sm:justify-between">
+      <p>© 2026 BergKapital · Inhaber Marco Jaspers</p>
+      <nav aria-label="Rechtliches"><ul class="flex gap-6">
+        <li><a href="/impressum.html" class="hover:text-ink">Impressum</a></li>
+        <li><a href="/datenschutz.html" class="hover:text-ink">Datenschutz</a></li>
+        <li><a href="/erstinformation.html" class="hover:text-ink">Erstinformation</a></li>
+      </ul></nav>
+    </div>
+  </footer>
+  <script src="/js/main.js?v=20261109e" defer></script>
+</body>
+</html>

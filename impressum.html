@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de" class="theme-marke">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum | BergKapital – Finanzberatung &amp; Versicherungsmakler</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2A2E33">
+  <script>
+    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
+    (function () {
+      var v = new URLSearchParams(location.search).get('v');
+      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
+      if (v !== 'klassisch') v = 'marke';
+      document.documentElement.classList.remove('theme-marke');
+      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
+      document.documentElement.dataset.variant = v;
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css?v=20261109g">
+</head>
+<body>
+  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
+    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
+      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
+      <nav class="flex items-center gap-1" aria-label="Variante">
+        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
+        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
+        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
+      </nav>
+    </div>
+    <script>
+      (function () {
+        var cur = document.documentElement.dataset.variant;
+        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
+      })();
+    </script>
+  </div>
+  <header class="border-b border-line bg-white">
+    <div class="container-x flex items-center justify-between gap-6 py-5">
+      <a href="/" class="block" aria-label="BergKapital – zur Startseite">
+        <span class="wordmark block text-[1.25rem]"><b>Berg</b><span>Kapital</span></span>
+        <span class="wordmark-sub">Finanzberatung&nbsp;&nbsp;|&nbsp;&nbsp;Versicherungsmakler</span>
+      </a>
+      <a href="/" class="link-line whitespace-nowrap text-[12px]"><span class="hidden sm:inline">Zur&nbsp;</span>Startseite</a>
+    </div>
+  </header>
+  <main class="section">
+    <article class="container-x max-w-[760px]">
+      <!-- TODO: Schlichtungsstelle für Finanzanlagen klären, IHK-Anschrift prüfen, Impressum rechtlich prüfen lassen -->
+      <p class="label">Rechtliches</p>
+      <h1 class="mt-5 text-[2.75rem] md:text-[3.5rem]">Impressum</h1>
+      <div class="mt-12 space-y-4 text-muted [&_h2]:!mt-12 [&_h2]:font-serif [&_h2]:text-[1.625rem] [&_h2]:text-ink">
+<h2>Angaben gemäß § 5 DDG</h2>
+<p>Marco Jaspers (Einzelunternehmer)<br>handelnd unter: BergKapital – Finanzberatung &amp; Versicherungsmakler<br>Engelbert-Wüster-Weg 18<br>42369 Wuppertal</p>
+<h2>Kontakt</h2>
+<p>Telefon: +49 160 4921092<br>E-Mail: info@bergkapital.de</p>
+<h2>Berufsbezeichnung und Erlaubnisse</h2>
+<p>Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO<br>Finanzanlagenvermittler mit Erlaubnis nach § 34f Abs. 1 GewO<br>Erlaubnisbehörde: Bergische Industrie- und Handelskammer Wuppertal-Solingen-Remscheid, Heinrich-Kamp-Platz 2, 42103 Wuppertal</p>
+<h2>Vermittlerregister</h2>
+<p>Registrierungsnummer § 34d: D-U35K-GZC7J-30<br>Registrierungsnummer § 34f: D-F-181-4PDP-90</p>
+<p><span class="font-medium text-ink">Gemeinsame Registerstelle</span><br>Deutscher Industrie- und Handelskammertag (DIHK)<br>Breite Straße 29<br>10178 Berlin<br>Telefon: 0180 600 58 50<br>(Festnetzpreis 0,20 €/Anruf; Mobilfunkpreise maximal 0,60 €/Anruf)<br><a href="https://www.vermittlerregister.info" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-ink">www.vermittlerregister.info</a></p>
+<h2>Berufsrechtliche Regelungen</h2>
+<ul class="space-y-1">
+  <li>§ 34d Gewerbeordnung (GewO)</li>
+  <li>§ 34f Gewerbeordnung (GewO)</li>
+  <li>§§ 59–68 Versicherungsvertragsgesetz (VVG)</li>
+  <li>Versicherungsvermittlungsverordnung (VersVermV)</li>
+  <li>Finanzanlagenvermittlungsverordnung (FinVermV)</li>
+</ul>
+<p>Einsehbar unter <a href="https://www.gesetze-im-internet.de" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-ink">www.gesetze-im-internet.de</a></p>
+
+<h2>Schlichtungsstellen</h2>
+<p><span class="font-medium text-ink">Versicherungsombudsmann e. V.</span><br>Postfach 08 06 32<br>10006 Berlin<br>Tel.: 0800 3696000 (kostenfrei aus deutschen Telefonnetzen)<br>Fax: 0800 3699000 (kostenfrei aus deutschen Telefonnetzen)<br>Internet: <a href="https://www.versicherungsombudsmann.de" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-ink">www.versicherungsombudsmann.de</a></p>
+<p><span class="font-medium text-ink">Ombudsmann für die Private Kranken- und Pflegeversicherung</span><br>Postfach 06 02 22<br>10052 Berlin<br>Tel.: 0800 2550444 (kostenfrei aus deutschen Telefonnetzen)<br>Fax: 030 20458931<br>Internet: <a href="https://www.pkv-ombudsmann.de" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-ink">www.pkv-ombudsmann.de</a></p>
+
+<h2>Berufshaftpflichtversicherung</h2>
+<p>CGPA Europe S.A., vertreten durch CGPA Europe Underwriting GmbH<br>Hohenzollernstr. 69<br>80796 München</p>
+<p>Geltungsbereich der Versicherung: Deutschland</p>
+
+<h2>Beschwerdemanagement</h2>
+<p>Bei Beschwerden über unsere Tätigkeit wenden Sie sich gerne an die oben unter „Kontakt“ genannten Kontaktdaten.</p>
+
+<h2>Beratung und Vergütung</h2>
+<!-- TODO: rechtlich prüfen lassen: Vergütung durch Verbraucher bei Nettopolicen und Servicevereinbarungen (§ 34d GewO); Servicegebühr bei Finanzanlagen und Offenlegung nach FinVermV; klären, ob bei Finanzanlagen Bestandspflegeprovisionen fließen -->
+<p>Wir bieten im Zuge der Vermittlung eine Beratung gemäß den gesetzlichen Vorgaben an.</p>
+<p><span class="font-medium text-ink">Versicherungen</span><br>Für die Vermittlung und Betreuung von Versicherungen erhalten wir in der Regel eine Abschluss- und Vertriebscourtage sowie Bestands- und Pflegeprovisionen vom Produktanbieter. Diese sind bereits im Versicherungsbeitrag enthalten und von Ihnen nicht gesondert zu zahlen. Bei Nettopolicen ist keine Courtage enthalten; die Vergütung wird in diesem Fall vorab schriftlich mit Ihnen vereinbart.</p>
+<p><span class="font-medium text-ink">Finanzanlagen</span><br>Für die Beratung und Betreuung bei Finanzanlagen vereinbaren wir mit Ihnen eine Servicegebühr. Höhe und Berechnung, auch prozentual, werden vorab schriftlich festgelegt. Wir informieren Sie vor Abschluss des jeweiligen Geschäfts über Art und Höhe der Vergütung und etwaiger Zuwendungen.</p>
+<p><span class="font-medium text-ink">Zusätzliche Leistungen</span><br>Für zusätzliche Dienstleistungen können gesonderte Servicevereinbarungen getroffen werden, die weitere Kosten verursachen können. Sie werden vorab schriftlich mit Ihnen vereinbart.</p>
+
+<h2>Beteiligungen</h2>
+<p>Wir halten keine Beteiligungen an Stimmrechten oder dem Kapital von Versicherungsunternehmen. Es gibt keine Beteiligungen von Versicherungsunternehmen an den Stimmrechten oder dem Kapital unseres Unternehmens.</p>
+
+<h2>Inhaltlich verantwortlich</h2>
+<p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:<br>Marco Jaspers<br>Engelbert-Wüster-Weg 18<br>42369 Wuppertal</p>
+
+<h2>Haftung und Inhalte</h2>
+<!-- TODO: Einleitungssatz zu §§ 7–10 DDG von Claude ergänzt, bei der rechtlichen Prüfung bestätigen -->
+<p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+<p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+<h2>Haftung und Links</h2>
+<p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+<p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+<h2>Urheberrecht</h2>
+<p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+<p>Soweit die Inhalte auf dieser Website nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+      </div>
+    </article>
+  </main>
+  <footer class="border-t-2 border-cta bg-white">
+    <div class="container-x flex flex-col gap-4 py-8 text-[13px] text-muted sm:flex-row sm:justify-between">
+      <p>© 2026 BergKapital · Inhaber Marco Jaspers</p>
+      <nav aria-label="Rechtliches"><ul class="flex gap-6">
+        <li><a href="/impressum.html" class="hover:text-ink">Impressum</a></li>
+        <li><a href="/datenschutz.html" class="hover:text-ink">Datenschutz</a></li>
+        <li><a href="/erstinformation.html" class="hover:text-ink">Erstinformation</a></li>
+      </ul></nav>
+    </div>
+  </footer>
+</body>
+</html>
