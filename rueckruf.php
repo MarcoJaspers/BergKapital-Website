@@ -113,7 +113,7 @@ function smtp_befehl($verbindung, string $befehl, int ...$codes): void
     smtp_erwarten($verbindung, ...$codes);
 }
 
-function mail_senden(string $server, string $benutzer, string $passwort, string $an, ?string $antwortAn, string $text): void
+function mail_senden(string $server, string $benutzer, string $passwort, string $absender, string $an, ?string $antwortAn, string $text): void
 {
     $kontext = stream_context_create(['ssl' => ['verify_peer' => true, 'verify_peer_name' => true]]);
     $verbindung = @stream_socket_client('ssl://' . $server . ':465', $fehlerNr, $fehlerText, 15, STREAM_CLIENT_CONNECT, $kontext);
@@ -128,12 +128,12 @@ function mail_senden(string $server, string $benutzer, string $passwort, string 
         smtp_befehl($verbindung, 'AUTH LOGIN', 334);
         smtp_befehl($verbindung, base64_encode($benutzer), 334);
         smtp_befehl($verbindung, base64_encode($passwort), 235);
-        smtp_befehl($verbindung, 'MAIL FROM:<' . $benutzer . '>', 250);
+        smtp_befehl($verbindung, 'MAIL FROM:<' . $absender . '>', 250);
         smtp_befehl($verbindung, 'RCPT TO:<' . $an . '>', 250, 251);
         smtp_befehl($verbindung, 'DATA', 354);
 
         $kopf = [
-            'From: BergKapital Website <' . $benutzer . '>',
+            'From: BergKapital Website <' . $absender . '>',
             'To: <' . $an . '>',
             'Subject: =?UTF-8?B?' . base64_encode('Neue Rückrufbitte über die Website') . '?=',
             'Date: ' . date('r'),
@@ -214,7 +214,9 @@ $text = "Neue Rückrufbitte über bergkapital.de\n\n"
     . 'Eingegangen: ' . date('d.m.Y H:i') . " Uhr\n";
 
 try {
-    mail_senden((string) $konfig['smtp_host'], (string) $konfig['smtp_user'], $passwort, (string) $konfig['to'], $email !== '' ? $email : null, $text);
+    // Der Absender muss auf bergkapital.de lauten: netcup.net erlaubt per DMARC keine Zustellung von seinen Adressen über die Relays.
+    $absender = (string) ($konfig['from'] ?? $konfig['smtp_user']);
+    mail_senden((string) $konfig['smtp_host'], (string) $konfig['smtp_user'], $passwort, $absender, (string) $konfig['to'], $email !== '' ? $email : null, $text);
 } catch (Throwable $fehler) {
     // Nur die technische Ursache protokollieren, keine Angaben aus dem Formular.
     error_log('rueckruf: ' . $fehler->getMessage());
