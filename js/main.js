@@ -71,20 +71,30 @@
     });
   });
 
-  /* ---------- Rückruf-Formular: öffnet eine vorausgefüllte E-Mail ---------- */
+  /* ---------- Rückruf-Formular: sendet die Anfrage an den Server ---------- */
   const callback = document.querySelector('[data-callback]');
   if (callback) {
     const status = callback.querySelector('[data-callback-status]');
-    callback.addEventListener('submit', (e) => {
+    const submit = callback.querySelector('[type="submit"]');
+    const fallback = 'Das hat leider nicht geklappt. Bitte rufen Sie uns an oder schreiben Sie an info@bergkapital.de.';
+    callback.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const lines = ['Name', 'Telefon', 'E-Mail', 'Erreichbarkeit', 'Anliegen']
-        .map((name) => [name, callback.elements[name].value.trim()])
-        .filter(([, value]) => value)
-        .map(([name, value]) => `${name}: ${value}`);
-      const link = document.createElement('a');
-      link.href = `mailto:info@bergkapital.de?subject=${encodeURIComponent('Rückrufbitte über die Website')}&body=${encodeURIComponent(lines.join('\n'))}`;
-      link.click();
-      status.textContent = 'Ihr E-Mail-Programm wurde geöffnet. Bitte senden Sie die E-Mail dort ab.';
+      submit.disabled = true;
+      status.textContent = 'Wird gesendet …';
+      try {
+        const response = await fetch(callback.action, {
+          method: 'POST',
+          body: new FormData(callback),
+          headers: { Accept: 'application/json' },
+        });
+        const result = await response.json();
+        status.textContent = result.message || fallback;
+        if (result.ok) callback.reset();
+      } catch {
+        status.textContent = fallback;
+      } finally {
+        submit.disabled = false;
+      }
     });
   }
 
