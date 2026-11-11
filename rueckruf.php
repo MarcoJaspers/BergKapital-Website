@@ -1,6 +1,6 @@
 <?php
 /**
- * Rückruf-Formular: nimmt die Anfrage entgegen und schickt sie per SMTP über
+ * Rückruf- und Schaden-Formular: nimmt die Anfrage entgegen und schickt sie per SMTP über
  * ein Absender-Postfach bei netcup an das Postfach bei Google Workspace.
  *
  * Die Zugangsdaten liegen bewusst NICHT im Repository, sondern in
@@ -113,7 +113,7 @@ function smtp_befehl($verbindung, string $befehl, int ...$codes): void
     smtp_erwarten($verbindung, ...$codes);
 }
 
-function mail_senden(string $server, string $benutzer, string $passwort, string $absender, string $an, ?string $antwortAn, string $text): void
+function mail_senden(string $server, string $benutzer, string $passwort, string $absender, string $an, ?string $antwortAn, string $betreff, string $text): void
 {
     $kontext = stream_context_create(['ssl' => ['verify_peer' => true, 'verify_peer_name' => true]]);
     $verbindung = @stream_socket_client('ssl://' . $server . ':465', $fehlerNr, $fehlerText, 15, STREAM_CLIENT_CONNECT, $kontext);
@@ -135,7 +135,7 @@ function mail_senden(string $server, string $benutzer, string $passwort, string 
         $kopf = [
             'From: BergKapital Website <' . $absender . '>',
             'To: <' . $an . '>',
-            'Subject: =?UTF-8?B?' . base64_encode('Neue Rückrufbitte über die Website') . '?=',
+            'Subject: =?UTF-8?B?' . base64_encode($betreff) . '?=',
             'Date: ' . date('r'),
             'Message-ID: <' . bin2hex(random_bytes(16)) . '@bergkapital.de>',
             'MIME-Version: 1.0',
@@ -174,6 +174,9 @@ $telefon = einzeilig(feld('Telefon'));
 $email = einzeilig(feld('E-Mail'));
 $erreichbarkeit = einzeilig(feld('Erreichbarkeit'));
 $anliegen = feld('Anliegen');
+$istSchaden = feld('Formular') === 'schaden';
+$sparte = einzeilig(feld('Sparte'));
+$schadentag = einzeilig(feld('Schadentag'));
 
 if ($name === '' || strlen($name) > 200) {
     antworten(422, false, 'Bitte geben Sie Ihren Namen an.');
@@ -184,7 +187,13 @@ if (preg_match('/^[0-9+()\/ .\-]{5,40}$/', $telefon) !== 1) {
 if ($email !== '' && (strlen($email) > 254 || filter_var($email, FILTER_VALIDATE_EMAIL) === false)) {
     antworten(422, false, 'Bitte prüfen Sie Ihre E-Mail-Adresse.');
 }
-if (strlen($erreichbarkeit) > 300 || strlen($anliegen) > 5000) {
+if ($istSchaden && $anliegen === '') {
+    antworten(422, false, 'Bitte beschreiben Sie kurz, was passiert ist.');
+}
+if ($schadentag !== '' && preg_match('/^\d{4}-\d{2}-\d{2}$/', $schadentag) !== 1) {
+    antworten(422, false, 'Bitte prüfen Sie das Datum.');
+}
+if (strlen($erreichbarkeit) > 300 || strlen($sparte) > 100 || strlen($anliegen) > 5000) {
     antworten(422, false, 'Ihre Angaben sind zu lang. Bitte kürzen Sie den Text.');
 }
 if (feld('Einwilligung') !== 'ja') {
@@ -204,23 +213,32 @@ if (limit_erreicht($passwort)) {
     antworten(429, false, 'Es wurden zu viele Anfragen gesendet. Bitte versuchen Sie es später erneut oder rufen Sie uns an.');
 }
 
-$text = "Neue Rückrufbitte über bergkapital.de\n\n"
+$betreff = $istSchaden ? 'Neue Schadenmeldung über die Website' : 'Neue Rückrufbitte über die Website';
+$text = ($istSchaden ? 'Neue Schadenmeldung' : 'Neue Rückrufbitte') . " über bergkapital.de\n\n"
     . 'Name: ' . $name . "\n"
     . 'Telefon: ' . $telefon . "\n"
-    . 'E-Mail: ' . ($email !== '' ? $email : '-') . "\n"
-    . 'Erreichbarkeit: ' . ($erreichbarkeit !== '' ? $erreichbarkeit : '-') . "\n\n"
-    . "Anliegen:\n" . ($anliegen !== '' ? $anliegen : '-') . "\n\n"
-    . "Einwilligung zur Bearbeitung der Anfrage: ja\n"
+    . 'E-Mail: ' . ($email !== '' ? $email : '-') . "\n";
+if ($istSchaden) {
+    $text .= 'Versicherung: ' . ($sparte !== '' ? $sparte : '-') . "\n"
+        . 'Schadentag: ' . ($schadentag !== '' ? implode('.', array_reverse(explode('-', $schadentag))) : '-') . "\n\n"
+        . "Was ist passiert:\n" . $anliegen . "\n\n";
+} else {
+    $text .= 'Erreichbarkeit: ' . ($erreichbarkeit !== '' ? $erreichbarkeit : '-') . "\n\n"
+        . "Anliegen:\n" . ($anliegen !== '' ? $anliegen : '-') . "\n\n";
+}
+$text .= "Einwilligung zur Bearbeitung der Anfrage: ja\n"
     . 'Eingegangen: ' . date('d.m.Y H:i') . " Uhr\n";
 
 try {
     // Der Absender muss auf bergkapital.de lauten: netcup.net erlaubt per DMARC keine Zustellung von seinen Adressen über die Relays.
     $absender = (string) ($konfig['from'] ?? $konfig['smtp_user']);
-    mail_senden((string) $konfig['smtp_host'], (string) $konfig['smtp_user'], $passwort, $absender, (string) $konfig['to'], $email !== '' ? $email : null, $text);
+    mail_senden((string) $konfig['smtp_host'], (string) $konfig['smtp_user'], $passwort, $absender, (string) $konfig['to'], $email !== '' ? $email : null, $betreff, $text);
 } catch (Throwable $fehler) {
     // Nur die technische Ursache protokollieren, keine Angaben aus dem Formular.
     error_log('rueckruf: ' . $fehler->getMessage());
     antworten(502, false, RUECKRUF_FEHLER);
 }
 
-antworten(200, true, 'Vielen Dank! Ihre Anfrage ist bei uns eingegangen. Wir melden uns bei Ihnen.');
+antworten(200, true, $istSchaden
+    ? 'Vielen Dank! Ihre Schadenmeldung ist bei uns eingegangen. Wir melden uns schnellstmöglich bei Ihnen.'
+    : 'Vielen Dank! Ihre Anfrage ist bei uns eingegangen. Wir melden uns bei Ihnen.');
