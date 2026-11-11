@@ -8,38 +8,9 @@
   <!-- Diese Seite richtet sich nur an bestehende Mandanten: noindex auch nach dem Livegang beibehalten -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#2A2E33">
-  <script>
-    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
-    (function () {
-      var v = new URLSearchParams(location.search).get('v');
-      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
-      if (v !== 'klassisch') v = 'marke';
-      document.documentElement.classList.remove('theme-marke');
-      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
-      document.documentElement.dataset.variant = v;
-    })();
-  </script>
   <link rel="stylesheet" href="/css/style.css?v=20261109g">
 </head>
 <body>
-  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
-    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
-      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
-      <nav class="flex items-center gap-1" aria-label="Variante">
-        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
-        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
-        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
-      </nav>
-    </div>
-    <script>
-      (function () {
-        var cur = document.documentElement.dataset.variant;
-        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
-        var m = document.querySelector('meta[name="theme-color"]');
-        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
-      })();
-    </script>
-  </div>
   <header class="border-b border-line bg-white">
     <div class="container-x flex items-center justify-between gap-6 py-5">
       <a href="/" class="block" aria-label="BergKapital – zur Startseite">

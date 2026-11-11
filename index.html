@@ -9,17 +9,6 @@
   <meta name="theme-color" content="#2A2E33">
   <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <script>
-    /* Farbvariante vor dem ersten Rendern setzen. Standard: Marke (Anthrazit & Gold); ?v=klassisch zeigt die klassische Variante (merkt sich die Wahl für die Sitzung) */
-    (function () {
-      var v = new URLSearchParams(location.search).get('v');
-      try { if (v) sessionStorage.setItem('bk-variant-2', v); else v = sessionStorage.getItem('bk-variant-2'); } catch (e) {}
-      if (v !== 'klassisch') v = 'marke';
-      document.documentElement.classList.remove('theme-marke');
-      if (v !== 'klassisch') document.documentElement.classList.add('theme-' + v);
-      document.documentElement.dataset.variant = v;
-    })();
-  </script>
   <link rel="stylesheet" href="/css/style.css?v=20261109g">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
@@ -49,26 +38,6 @@
 <body class="pb-[68px] md:pb-0">
 
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white">Zum Inhalt springen</a>
-
-  <!-- 0 · Designstudien-Banner -->
-  <div class="bg-deep text-center text-[11px] uppercase tracking-[0.2em] text-white/80">
-    <div class="container-x flex flex-col items-center justify-center gap-1 py-2 sm:flex-row sm:gap-5">
-      <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
-      <nav class="flex items-center gap-1" aria-label="Variante">
-        <span class="mr-1 hidden text-white/60 sm:inline">Variante:</span>
-        <a class="variant-link" href="?v=klassisch" data-variant-link="klassisch">Klassisch</a>
-        <a class="variant-link" href="?v=marke" data-variant-link="marke">Marke</a>
-      </nav>
-    </div>
-    <script>
-      (function () {
-        var cur = document.documentElement.dataset.variant;
-        document.querySelectorAll('[data-variant-link]').forEach(function (a) { if (a.dataset.variantLink === cur) a.setAttribute('aria-current', 'true'); });
-        var m = document.querySelector('meta[name="theme-color"]');
-        if (m) m.setAttribute('content', { klassisch: '#1B2A44', marke: '#2A2E33' }[cur]);
-      })();
-    </script>
-  </div>
 
   <!-- 1 · Sticky-Navigation -->
   <header class="site-header sticky top-0 z-50 border-b border-transparent bg-white" data-header>
@@ -126,7 +95,6 @@
       <div class="absolute inset-0 -z-10" data-hero-media>
         <!-- TODO: echtes Porträt von Marco (Querformat, Person rechts im Bild, z. B. im Büro/Gespräch) als <img loading="eager" …> einsetzen und diesen Platzhalter ersetzen -->
         <div class="hero-bg absolute inset-0"></div>
-        <p class="absolute bottom-6 right-6 hidden text-[10px] uppercase tracking-[0.25em] text-white/55 md:block">Platzhalter · Porträt Marco Jaspers</p>
       </div>
 
       <!-- Großes B-Monogramm (Schwebebahn & Skyline) als Gestaltungselement. "screen" blendet den schwarzen Bildhintergrund aus. -->
@@ -372,11 +340,7 @@
         </div>
 
         <div class="md:col-span-5 md:col-start-8 md:sticky md:top-44" data-reveal>
-          <!-- TODO: echtes Porträt (Hochformat 4:5) als <img loading="lazy" width="… " height="…" alt="Marco Jaspers"> -->
-          <div class="placeholder aspect-[4/5] w-full">
-            <span class="font-serif text-[9rem] leading-none text-white" aria-hidden="true">MJ</span>
-            <p class="placeholder-note">Platzhalter · Porträt 4:5</p>
-          </div>
+          <img src="/assets/img/marco-jaspers.webp" alt="Marco Jaspers, Inhaber von BergKapital" width="1122" height="1402" loading="lazy" decoding="async" class="block aspect-[4/5] h-auto w-full rounded">
         </div>
       </div>
     </section>
@@ -582,7 +546,6 @@
     <div class="border-t border-white/10">
       <div class="container-x flex flex-col gap-2 py-6 text-[12px] text-white/60 sm:flex-row sm:justify-between">
         <p>© 2026 BergKapital · Inhaber Marco Jaspers</p>
-        <p>Designstudie – Beispiel-Entwurf, keine aktive Website</p>
       </div>
     </div>
   </footer>
