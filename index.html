@@ -10,6 +10,10 @@
   <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css?v=20261109g">
+  <style>
+    /* Vertrauens-Leiste: auf schmalen Handys etwas kleiner, damit lange Wörter nicht in die Nachbarspalte laufen */
+    @media (max-width: 430px) { .trust-text { font-size: 11px; letter-spacing: .08em; } }
+  </style>
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 
@@ -125,21 +129,21 @@
     <section class="border-b border-line bg-white" aria-label="Auf einen Blick">
       <ul class="container-x grid grid-cols-2 lg:grid-cols-4">
         <li class="flex items-center gap-3 border-b border-r border-line py-6 pr-4 lg:border-b-0 lg:px-6 lg:first:pl-0" data-reveal>
-          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Unabhängiger Versicherungsmakler</span>
+          <svg class="icon h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span class="trust-text text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Unabhängiger Versicherungs&shy;makler</span>
         </li>
         <li class="flex items-center gap-3 border-b border-line py-6 pl-4 lg:border-b-0 lg:border-r lg:px-6" data-reveal>
-          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 20h18M5 16l4-5 4 3 6-8"/></svg>
-          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Investment&shy;beratung</span>
+          <svg class="icon h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 20h18M5 16l4-5 4 3 6-8"/></svg>
+          <span class="trust-text text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Investment&shy;beratung</span>
         </li>
         <li class="flex items-center gap-3 border-r border-line py-6 pr-4 lg:px-6" data-reveal>
-          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Persönlich in Wuppertal</span>
+          <svg class="icon h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="trust-text text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Persönlich in Wuppertal</span>
         </li>
         <li class="flex items-center gap-3 py-6 pl-4 lg:px-6 lg:last:pr-0" data-reveal>
-          <svg class="icon h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z"/><path d="M12 8v4l2.5 2.5"/></svg>
+          <svg class="icon h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z"/><path d="M12 8v4l2.5 2.5"/></svg>
           <!-- TODO: kostenlos bestätigen -->
-          <span class="text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Kostenloses Erstgespräch</span>
+          <span class="trust-text text-[12px] font-medium uppercase leading-snug tracking-[0.14em]">Kostenloses Erstgespräch</span>
         </li>
       </ul>
     </section>
