@@ -1,0 +1,14 @@
+# BergKapital – Einstellungen für den Webserver (Apache hinter nginx bei netcup)
+
+# Eigene Fehlerseite statt der Standardseite des Hosters
+ErrorDocument 404 /404.html
+
+# Kein Verzeichnis-Listing
+Options -Indexes
+
+# Sicherheits-Header
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
